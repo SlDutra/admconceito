@@ -1,0 +1,755 @@
+
+/*ESTILO GERAL*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    position: relative;
+    /* Necessário para o pseudo-elemento funcionar corretamente */
+    background-image: url('img/PRÉDIO.png');
+    /* Caminho da imagem de fundo */
+    background-size: cover;
+    /* Faz a imagem cobrir toda a tela */
+    background-position: center;
+    /* Centraliza a imagem na tela */
+    background-repeat: no-repeat;
+    /* Evita que a imagem se repita */
+    background-attachment: fixed;
+    /* Fixa a imagem de fundo durante o rolar da página */
+    min-height: 100vh;
+    /* Permite que o body expanda além da viewport */
+    width: 100vw;
+    /* Largura da tela */
+    margin: 0;
+    /* Remove a margem padrão do body */
+    overflow: auto;
+    /* Permite rolagem */
+}
+
+/* Cria uma sobreposição preta para escurecer o fundo */
+body:before {
+    content: "";
+    position: absolute;
+    /* Coloca o pseudo-elemento sobre o conteúdo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    /* Preto com 70% de opacidade para escurecer */
+    z-index: -1;
+    /* Coloca a sobreposição atrás do conteúdo */
+    pointer-events: none;
+    /* Garante que o pseudo-elemento não interfira na interação com o conteúdo */
+}
+
+/* ESTILO GERAL */
+body {
+    position: relative;
+    background-image: url('img/PRÉDIO.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Considerar remover isso para mobile */
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+    overflow: auto;
+}
+
+/* Ajustes para dispositivos móveis */
+@media screen and (max-width: 1020px) {
+    body {
+        background-image: url('img/PRÉDIO CELULAR.png'); /* Caminho da imagem para mobile */
+        background-size: cover; /* Garante que a imagem cubra toda a área sem distorção */
+        background-position: center; /* Centraliza a imagem na tela */
+        background-repeat: no-repeat; /* Evita que a imagem se repita */
+        background-attachment: scroll; /* Alternativa a fixed, ajusta bem em mobile */
+        background-color: #000; /* Define a cor de fundo como preto para evitar qualquer cor de fundo padrão */
+    }
+
+    body:before {
+        display: none; /* Remove a sobreposição preta para dispositivos móveis */
+    }
+}
+
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.btn-contato button {
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #00ff15;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+h2.titulo {
+    color: white;
+    font-size: 38px;
+    text-align: center;
+}
+
+h2.titulo span {
+    color: #d32f2f;
+}
+
+button:hover,
+form .btn-enviar input:hover {
+    box-shadow: 0px 0px 8px rgb(161, 14, 14);
+    transform: scale(1.05);
+}
+
+/*ESTILO DO CABEÇALHO*/
+header {
+    padding: 40px 4%;
+}
+
+header>.interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+
+header nav.menu-desktop a:hover {
+    color: red;
+    transform: scale(1.05);
+}
+
+header nav ul {
+    list-style-type: none;
+}
+
+header nav.menu-desktop ul li {
+    display: inline-block;
+    padding: 0 40px;
+}
+
+
+
+/*ESTILO MENU MOBILE*/
+
+.btn-abrir-menu i{
+    color: #d32f2f;
+    font-size: 40px;
+
+}
+
+.menu-mobile{
+    background-color: #000000;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    width: 0%;
+    overflow: hidden;
+    transition: .2s;
+}
+
+.menu-mobile.abrir-menu{
+    width: 70%;
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu{
+    display: block;
+}
+
+.menu-mobile .btn-fechar i{
+    color: #d32f2f;
+    font-size: 30px;
+}
+
+.menu-mobile .btn-fechar{
+    padding: 20px 5%;
+}
+
+.menu-mobile nav ul{
+    text-align: right;
+}
+
+.menu-mobile nav ul li a{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 8%;
+    display: block;
+}
+
+.menu-mobile nav ul li a:hover{
+    background-color: #d32f2f;
+    color: #000;
+}
+
+.overlay-menu{
+    background-color: #000000b0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 8888;
+    display: none;
+}
+
+
+/*ESTILO DO TOPO DO SITE */
+section.topo-do-site {
+    padding: 40px 4%;
+}
+
+section.topo-do-site .flex {
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+}
+
+.topo-do-site h1 {
+    color: #ffffff;
+    font-size: 38px;
+    line-height: 35px;
+}
+
+.topo-do-site .txt-topo-site h1 span {
+    color: #d32f2f;
+}
+
+.topo-do-site .txt-topo-site p {
+    color: #ffffff;
+    font-size: 19px;
+    margin: 40px 0;
+}
+
+.topo-do-site .img-topo-site img {
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+@keyframes flutuar {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 30px;
+    }
+}
+
+
+/* Estilo específico para a imagem dentro da seção topo-do-site */
+.img-topo-site img {
+    width: 100%;
+    /* Ajusta a largura da imagem para o tamanho do contêiner pai */
+    max-width: 450px;
+    /* Define uma largura máxima da imagem */
+    height: auto;
+    /* Mantém a proporção original */
+    margin-top: 50px;
+    border-radius: 20px;
+    /* Adiciona bordas arredondadas */
+}
+
+/* Outras imagens na página, se necessário */
+.img-item img {
+    width: 75%;
+    /* Ajusta a largura da imagem para o tamanho do contêiner pai */
+    max-width: 400px;
+    /* Define uma largura máxima da imagem */
+    height: auto;
+    /* Mantém a proporção original */
+    border-radius: 20px;
+    /* Adiciona bordas arredondadas */
+}
+
+
+
+/*ESTILO DAS ESPECIALIDADES*/
+section.especialidades {
+    padding: 40px 4%;
+}
+
+section.especialidades .flex {
+    gap: 60px;
+}
+
+.especialidades .especialidades-box {
+    color: white;
+    padding: 40px;
+    height: 500px;
+    border-radius: 20px;
+    margin-top: 45px;
+    transition: .2s;
+}
+
+.especialidades .especialidades-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #d32f2f83;
+}
+
+.especialidades .especialidades-box i {
+    font-size: 70px;
+    color: #d32f2f;
+}
+
+.especialidades .especialidades-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+/*ESTILO DO SOBRE*/
+section.sobre {
+    padding: 40px 4%;
+}
+
+section.sobre .flex {
+    flex-direction: column;
+    gap: 60px;
+}
+
+.img-texto {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.img-item {
+    flex: 1;
+}
+
+.img-item img {
+    width: 75%;
+    /* Ajusta a largura da imagem para o tamanho do contêiner pai */
+    max-width: 400px;
+    /* Define uma largura máxima da imagem */
+    height: auto;
+    /* Mantém a proporção original */
+}
+
+.texto-item {
+    flex: 2;
+    color: #ffffff;
+}
+
+.texto-item h2 {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+
+.texto-item p {
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: justify;
+}
+
+.sobre .txt-sobre {
+    color: #ffffff;
+}
+
+.sobre .txt-sobre h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.sobre .texto-item h2 span {
+    color: #d32f2f;
+    display: block;
+}
+
+.sobre .texto-item p {
+    margin: 20px 0;
+    font: 1em sans-serif;
+    font-size: 18px;
+    text-align: justify;
+}
+
+.sobre .btn-social button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: #d32f2f;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .2s;
+}
+
+
+/* Estilo específico para o botão do WhatsApp */
+.whatsapp-btn {
+    margin-top: 20px;
+    text-align: center;
+    /* Centraliza o botão dentro do contêiner */
+}
+
+.whatsapp-btn button {
+    padding: 10px 20px;
+    background-color: #00ff15;
+    /* Cor do WhatsApp */
+    color: white;
+    border: none;
+    border-radius: 100px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    /* Duração da transição */
+}
+
+/* ESTILO DO FORMULÁRIO DE CONTATO */
+
+section.formulario {
+    padding: 80px 4%;
+    background-color: transparent;
+    /* Remove a cor de fundo do formulário */
+    border-radius: 20px;
+    /* Adiciona bordas arredondadas */
+}
+
+form {
+    max-width: 600px;
+    /* Largura máxima ajustada */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Maior espaçamento entre os elementos */
+    padding: 20px;
+    /* Adiciona um padding interno */
+    background-color: rgba(0, 0, 0, 0.33);
+    /* Fundo semi-transparente */
+    border-radius: 15px;
+    /* Borda arredondada */
+}
+
+form label {
+    color: #ffffff;
+    /* Cor do texto das labels */
+    font-size: 16px;
+    /* Tamanho da fonte das labels */
+}
+
+form input,
+form textarea {
+    width: 100%;
+    background-color: #3c3c3c;
+    /* Fundo dos campos */
+    border: 1px solid #444;
+    /* Borda fina e discreta */
+    outline: none;
+    padding: 15px;
+    border-radius: 10px;
+    /* Borda arredondada */
+    color: #fff;
+    font-size: 16px;
+    /* Ajusta o tamanho da fonte */
+}
+
+form textarea {
+    resize: none;
+    /* Remove a opção de redimensionar */
+    min-height: 150px;
+    /* Define uma altura mínima */
+    max-height: 300px;
+    /* Define uma altura máxima */
+}
+
+form .btn-enviar {
+    text-align: center;
+}
+
+form .btn-enviar button {
+    width: 100%;
+    /* Botão ocupa toda a largura do contêiner */
+    background-color: #00ff15;
+    /* Cor de fundo do botão verde */
+    color: #000;
+    font-weight: 600;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    /* Borda arredondada */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    /* Transições para hover */
+}
+
+form .btn-enviar button:hover {
+    background-color: #00d10c;
+    /* Cor do botão ao passar o mouse */
+    transform: scale(1.05);
+    /* Leve aumento de tamanho no hover */
+}
+
+/*PAGINA DE OBRIGADO */
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #101026;
+    flex-direction: column;
+}
+
+.text {
+    font-size: 45px;
+    color: #f5f5f5;
+    margin-bottom: 30px;
+}
+
+.paragrafo {
+    color: #f5f5f5;
+    margin-bottom: 50px;
+}
+
+.btn {
+    padding: 15px 55px;
+    background: #d32f2f;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    transition: all 0.5s;
+}
+
+.btn:hover {
+    border-radius: 16px;
+}
+
+
+/* ESTILO DO RODAPÉ */
+
+footer {
+    padding: 40px 4%;
+    box-shadow: 0 0 40px 10px #d32f2f23;
+    /* Sombra do rodapé */
+
+}
+
+footer .flex {
+    justify-content: space-between;
+}
+
+footer .line-footer {
+    padding: 20px 0;
+}
+
+
+.btn-social button {
+    /* Botões sociais */
+
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #d32f2f;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .2s;
+}
+
+.borda {
+    border-top: 2px solid #d32f2f;
+}
+
+footer .line-footer p i {
+    color: #d32f2f;
+    font-size: 22px;
+}
+
+footer .line-footer p a {
+    color: #fff;
+}
+
+@media screen and (max-width: 1020px) {
+
+    /*CLASSES GERAIS*/
+    .flex {
+        flex-direction: column;
+    }
+    
+
+    body {
+        background-image: url('img/PRÉDIO\ CELULAR.png'); /* Substitua pelo caminho da sua imagem para mobile */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Dependendo do efeito desejado, você pode remover isso */
+        min-height: 100vh;
+        width: 100vw;
+        margin: 0;
+        overflow: auto;
+    }
+
+    /* Se você deseja remover a sobreposição preta para mobile */
+    body:before {
+        display: none; /* Remove a sobreposição preta */
+    }
+
+    .topo-do-site .flex {
+        flex-direction: column-reverse;
+    }
+
+    /*CABEÇALHO*/
+    .menu-desktop,
+    .btn-contato {
+        display: none;
+    }
+
+    /*TOPO DO SITE*/
+    section.topo-do-site {
+        padding: 20px 8%;
+    }
+
+    .topo-do-site .img-topo-site img {
+        width: 60%;
+        align-items: center;
+    }
+
+    section.topo-do-site .flex {
+        gap: 80px;
+    }
+
+     .texto-item h2{
+        font-size: 30px;
+        line-height: 35px;
+        text-align: center;
+    }
+
+     .texto-item p{
+        font-size: 18px;
+        line-height: 35px;
+        text-align: center;
+    }
+
+     .img-item img{
+        width: 100%;
+        align-items: center;
+    }
+
+
+
+    /*ESPECIALIDADES*/
+    section.especialidades {
+        padding: 40px 4%;
+    }
+
+    h2.titulo{
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    /*SOBRE*/
+    section.sobre{
+        padding: 80px 8%;
+    }
+
+
+    /*RODA PÉ*/
+    footer .flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    footer .line-footer{
+        text-align: center;
+    }
+    
+    /* Adiciona outras regras específicas para dispositivos móveis, se necessário */
+
+    /* Certifique-se de que a sobreposição preta também está desativada ou adequada para a versão móvel */
+    body:before {
+        display: none; /* Remove a sobreposição preta se você quiser um fundo sólido preto sem sobreposição */
+    }
+
+    .btn-social button {
+        background-color: #d32f2f; /* Altere o fundo dos botões se necessário */
+        color: #000000; /* Altere a cor dos ícones dos botões sociais */
+    }
+
+    /* Se os ícones forem fontes (como Font Awesome) e você precisa alterar a cor deles */
+    .btn-social button i {
+        color: #000000; /* Defina a cor desejada para os ícones */
+    }
+
+
+    .img-texto {
+        flex-direction: column-reverse; /* Inverte a ordem dos itens */
+        align-items: center; /* Centraliza os itens horizontalmente */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .img-texto .img-item {
+        margin-bottom: 20px; /* Espaço abaixo da imagem e antes do texto */
+    }
+
+    .img-texto .texto-item {
+        margin-bottom: 20px; /* Espaço abaixo do texto e antes da imagem */
+    }
+
+    .img-texto .img-item img {
+        width: 100%; /* Ajusta a largura da imagem ao contêiner pai */
+        max-width: 400px; /* Define uma largura máxima para a imagem */
+        height: auto; /* Mantém a proporção original da imagem */
+    }
+
+    .texto-item h2 {
+        font-size: 30px; /* Ajusta o tamanho da fonte do título */
+        line-height: 35px; /* Ajusta a altura da linha do título */
+        text-align: center; /* Centraliza o título */
+    }
+
+    .texto-item p {
+        font-size: 18px; /* Ajusta o tamanho da fonte do parágrafo */
+        line-height: 35px; /* Ajusta a altura da linha do parágrafo */
+        text-align: center; /* Centraliza o parágrafo */
+    }
+
+
+}
+
+@media screen and (min-width: 1020px){
+    .btn-abrir-menu{
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

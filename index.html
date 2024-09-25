@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Slick Slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="menu.js" defer></script>
+    <title>Conceito Condomínios</title>
+</head>
+<body>
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="#"><img src="img/logo.png" alt="Logo Conceito Condomínios"></a>
+            </div><!--logo-->
+
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#servicos">Especialidades</a></li>
+                </ul>
+            </nav>
+
+            <div class="btn-contato">
+                <a href="https://wa.link/hizu5u"><button>📞 Contato</button></a>
+            </div><!--btn-contato-->
+
+            <div class="btn-abrir-menu" id="btn-abrir-menu">
+                <i class="bi bi-list"></i>
+            </div><!--abrir-menu-->
+
+            <div class="menu-mobile" id="menu-mobile">
+                <div class="btn-fechar">
+                    <i class="bi bi-x-lg"></i>
+                </div><!--btn-fechar-->
+                
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#servicos">Especialidades</a></li>
+                        <li><a href="https://wa.link/hizu5u">Contato</a></li>
+                    </ul>
+                </nav>
+            </div><!--menu-mobile-->
+
+            <div class="overlay-menu" id="overlay-menu"></div>
+        </div><!--interface-->
+    </header>
+
+    <main>
+        <section id="home" class="topo-do-site">
+            <div class="interface">
+                <div class="flex">
+                    <div class="txt-topo-site">
+                        <h1>CONDOMÍNIO EM ORDEM, VIDA EM HARMONIA<span>!</span></h1>
+                        <p>A administração de condomínio cuida da gestão financeira, manutenção das áreas comuns e conformidade legal, garantindo um ambiente harmonioso e eficiente para todos os moradores.</p>
+                        <div class="btn-contato">
+                            <a href="https://wa.link/hizu5u"><button>📞 Entre em Contato</button></a>
+                        </div>
+                    </div><!--txt-topo-site-->
+                    <div class="img-topo-site">
+                        <img src="img/cuidamos do seu lar.png" alt="">
+                    </div><!--img-topo-site-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--topo-do-site-->
+
+        <section id="servicos" class="especialidades">
+            <div class="interface">
+                <h2 class="titulo">NOSSOS <span>SERVIÇOS.</span></h2>
+                <div class="servicos-slider">
+                    <div class="especialidades-box">
+                        <i class="bi bi-graph-up-arrow"></i>
+                        <h3>Assessoria Financeira</h3>
+                        <p>Fundamental para garantir a saúde financeira do condomínio, gerenciar receitas e despesas, e assegurar a correta alocação dos recursos.</p>
+                    </div><!--especialidades-box-->
+                    <div class="especialidades-box">
+                        <i class="bi bi-house-gear"></i>
+                        <h3>Contratação de Seguro Obrigatório</h3>
+                        <p>Essencial para proteger o condomínio contra riscos e danos.</p>
+                    </div><!--especialidades-box-->
+                    <div class="especialidades-box">
+                        <i class="bi bi-cone-striped"></i>
+                        <h3>Fiscalização e Acompanhamento de Obras</h3>
+                        <p>Crucial para assegurar que as obras e serviços realizados atendam aos padrões de qualidade e conformidade.</p>
+                    </div><!--especialidades-box-->
+                    <div class="especialidades-box">
+                        <i class="bi bi-person-check"></i>
+                        <h3>Gestão de Conflitos</h3>
+                        <p>Auxiliamos na mediação de conflitos entre moradores.</p>
+                    </div><!--especialidades-box-->
+                    <div class="especialidades-box">
+                        <i class="bi bi-tools"></i>
+                        <h3>Manutenção Preventiva</h3>
+                        <p>Realizamos manutenções regulares para prevenir problemas.</p>
+                    </div><!--especialidades-box-->
+                    <div class="especialidades-box">
+                        <i class="bi bi-eye"></i>
+                        <h3>Gestão Transparente</h3>
+                        <p>Gestão transparente e de fácil compreensão para todos os condôminos.</p>
+                    </div><!--especialidades-box-->
+                    <div class="especialidades-box">
+                        <i class="bi bi-briefcase"></i>
+                        <h3>Assessoria Jurídica</h3>
+                        <p>Assessoria jurídica para garantir que todos os aspectos legais sejam cumpridos.</p>
+                    </div><!--especialidades-box-->
+                    <div class="especialidades-box">
+                        <i class="bi bi-people"></i>
+                        <h3>Contabilidade e Recursos Humanos</h3>
+                        <p>Gestão contábil e de recursos humanos para uma administração eficiente.</p>
+                    </div><!--especialidades-box-->
+                </div><!--servicos-slider-->
+            </div><!--interface-->
+        </section><!--especialidades-->
+
+        <section id="sobre" class="sobre">
+            <div class="interface">
+                <div class="flex">
+                    <div class="img-texto">
+                        <div class="img-item">
+                            <img src="img/FOTO BRIAN.png" alt="Imagem 1">
+                        </div><!--img-item-->
+                        <div class="texto-item">
+                            <h2>MUITO PRAZER, <span>SOMOS A EQUIPE CONCEITO.</span></h2>
+                            <p>A Conceito Condomínios, com mais de 17 anos de experiência, oferece administração especializada de condomínios,
+                                combinando expertise em finanças e gestão, originada de um escritório de contabilidade nossa empresa conta com uma equipe de síndicos e especialistas para garantir uma administração eficiente,
+                                harmoniosa e transparente, comprometidos com a excelência e inovação, proporcionamos tranquilidade e confiança aos nossos clientes,
+                                adaptando nossos serviços às necessidades dinâmicas do dia a dia de cada unidade.</p>
+                            <p2>Na Conceito Condomínios, garantimos excelência na gestão de propriedades, oferecendo tranquilidade e confiança aos nossos clientes.
+                                Estamos sempre inovando e ajustando nossos serviços para atender às demandas do mercado,
+                                transformando a administração do seu condomínio em uma experiência excepcional.</p2>
+                        </div><!--texto-item-->
+                    </div><!--img-texto-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--sobre-->
+
+        <section id="formulario" class="formulario">
+            <div class="interface">
+                <h2 class="titulo">SOLICITE SUA <span>PROPOSTA.</span></h2>
+                <form action="https://api.staticforms.xyz/submit" method="post">
+                    <label for="name"></label>
+                    <input type="text" id="name" name="name" placeholder="Digite seu nome" autocomplete="off">
+                    <label for="number"></label>
+                    <input type="number" id="number" name="number" placeholder="Digite seu número" autocomplete="off">
+                    <label for="email"></label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" autocomplete="off">
+                    <label for="messagem"></label>
+                    <textarea id="messagem" name="message" placeholder="Digite sua mensagem"></textarea>
+                    <div class="btn-enviar">
+                        <button type="submit">Enviar</button>
+                    </div>
+                    <input type="hidden" name="accessKey" value="c0d0cfe0-0fa5-4f24-a765-13589d8b83e0">
+                    <input type="hidden" name="redirectTo" value="http://127.0.0.1:5500/obrigado.html">
+                </form>
+            </div><!--interface-->
+        </section><!--formulario-->
+    </main>
+    
+    <footer>
+        <div class="interface">
+            <div class="line-footer">
+                <div class="flex">
+                    <div class="logo-footer">
+                        <img src="img/logo.png" alt="Logotipo Conceito Condomínios">
+                    </div><!--logo-footer-->    
+                    <div class="btn-social">
+                        <a href="https://www.instagram.com/conceito.condominios/?igsh=NXVreTdwcjhzbG15"><button><i class="bi bi-instagram"></i></button></a>
+                        <a href="https://www.youtube.com/channel/UCugnAtjRNMTXSV1n24Erl4w"><button><i class="bi bi-youtube"></i></button></a>
+                        <a href="#"><button><i class="bi bi-linkedin"></i></button></a>
+                        <a href="https://www.tiktok.com/@conceitoadmcondominios?is_from_webapp=1&sender_device=pc"><button><i class="bi bi-tiktok"></i></button></a>
+                    </div><!--btn-social-->
+                </div><!--flex-->
+            </div><!--line-footer-->
+
+            <div class="line-footer borda">
+                <p><i class="bi bi-envelope-fill"></i> <a href="mailto:contato@admconceito.com.br">contato@admconceito.com.br</a></p>
+            </div><!--line-footer-->
+        </div><!--interface-->
+    </footer>
+
+    <div style="width: 100%; height: 250px; overflow: hidden; margin: 0; padding: 0;">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d115208.53239881275!2d-49.282342421375986!3d-25.52949375628954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x94dcf101d840f3a3%3A0x4194d0133daa9d8d!2sR.%20Dr.%20Manoel%20Ribeiro%20de%20Campos%2C%20144%20-%20Sala%2003%20-%20Centro%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Pinhais%20-%20PR%2C%2083005-310!3m2!1d-25.5295168!2d-49.199940899999994!5e0!3m2!1spt-BR!2sbr!4v1727201418679!5m2!1spt-BR!2sbr" 
+            width="100%" 
+            height="100%" 
+            style="border: 0; margin: 0; padding: 0;" 
+            allowfullscreen="" 
+            loading="lazy">            
+        </iframe>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('.servicos-slider').slick({
+                dots: false, // Desativar os pontos de navegação
+                infinite: true,
+                speed: 500,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                arrows: false, // Desativar os botões de navegação
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+    
+</body>
+</html>
